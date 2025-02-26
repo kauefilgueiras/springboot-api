@@ -39,4 +39,13 @@ public class UserController {
         userService.deleteById(id);
     }
 
+    @PutMapping("/{id}")
+    public User update(@RequestBody UserDTO userDTO, @PathVariable Long id) {
+        return userService.findById(id).map(user -> {
+                    user.setName(userDTO.name());
+                    user.setEmail(userDTO.email());
+                    return userService.update(user);
+                })
+                .orElseThrow(() -> new RuntimeException("Error /PUT request"));
+    }
 }

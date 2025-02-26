@@ -27,6 +27,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User update(User user){
+        return userRepository.save(user);
+    }
+
     public Optional<User> findById(Long id){
         return userRepository.findById(id);
     }

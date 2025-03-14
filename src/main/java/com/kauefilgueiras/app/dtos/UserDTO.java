@@ -1,4 +1,6 @@
 package com.kauefilgueiras.app.dtos;
 
-public record UserDTO(String name, String email) {
+import com.kauefilgueiras.app.model.Product;
+
+public record UserDTO(String name, String email, Product product) {
 }

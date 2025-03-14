@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
@@ -29,8 +28,9 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Optional<User> getById(@PathVariable Long id) {
-        return userService.findById(id);
+    public User getById(@PathVariable Long id) {
+        return userService.findById(id)
+                .orElseThrow(() -> new RuntimeException("Error /GET /id"));
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

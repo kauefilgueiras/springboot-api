@@ -52,14 +52,6 @@ Este documento descreve o funcionamento de um sistema SAP simples, detalhando su
 
 ---
 
-## 📊 Diagrama UML
-
-Abaixo está o diagrama UML representando as relações entre as entidades:
-
-![Diagrama UML](uml_sap.png)
-
----
-
 ## 🔧 Funcionalidades do Sistema
 
 ### ✅ **Gestão de Pedidos**
